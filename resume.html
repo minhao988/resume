@@ -1,214 +1,247 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume - Ryan Goh</title>
+  <title>Modern Resume - Ryan Goh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
+
     body {
-      font-family: "Inter", "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
-      background: #f6f7fb;
-      color: #222;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg,#0f172a,#020617);
+      color: #0f172a;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 30px;
+    }
+
+    .resume {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 15px 50px rgba(0,0,0,.35);
+    }
+
+    header {
+      background: linear-gradient(135deg,#2563eb,#06b6d4);
+      color: #fff;
+      padding: 40px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .header-left h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: .3px;
+    }
+
+    .header-left p {
+      margin: 6px 0 0;
+      opacity: .95;
+      font-size: 14px;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 13px;
+      opacity: .95;
       line-height: 1.6;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
+    .print-btn {
       background: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      color: #2563eb;
+      cursor: pointer;
+      transition: .25s;
+      box-shadow: 0 5px 15px rgba(0,0,0,.15);
+    }
+
+    .print-btn:hover { transform: translateY(-2px); }
+
+    .content {
       display: grid;
-      grid-template-columns: 320px 1fr;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,.08);
+      grid-template-columns: 300px 1fr;
     }
 
     aside {
-      background: linear-gradient(180deg,#0f172a,#020617);
-      color: #fff;
-      padding: 30px 25px;
-    }
-
-    .avatar {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      background: #fff2;
-      margin: 0 auto 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      font-weight: 700;
-    }
-
-    aside h1 {
-      text-align: center;
-      font-size: 22px;
-      margin: 0;
-    }
-
-    aside p.role {
-      text-align: center;
-      margin: 6px 0 18px;
-      font-size: 13px;
-      opacity: .85;
-    }
-
-    .side-block { margin-bottom: 22px; }
-
-    .side-block h3 {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-      color: #93c5fd;
-    }
-
-    .side-block p, .side-block li {
-      font-size: 13px;
-      margin: 4px 0;
-      opacity: .95;
-    }
-
-    .tags span {
-      display: inline-block;
-      background: #1e293b;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      margin: 4px 4px 0 0;
+      background: #f8fafc;
+      padding: 28px 26px;
+      border-right: 1px solid #e5e7eb;
     }
 
     main {
-      padding: 32px 36px;
+      padding: 30px 34px;
     }
 
-    section { margin-bottom: 26px; }
+    .block { margin-bottom: 26px; }
+
+    .block h3 {
+      margin: 0 0 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #2563eb;
+    }
+
+    .block p, .block li { font-size: 13px; margin: 6px 0; }
+
+    .tag {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin: 4px 6px 0 0;
+      font-weight: 500;
+    }
+
+    section { margin-bottom: 28px; }
 
     section h2 {
       font-size: 18px;
-      margin-bottom: 12px;
-      border-left: 4px solid #2563eb;
-      padding-left: 10px;
-      color: #1e3a8a;
+      margin-bottom: 14px;
+      position: relative;
+      padding-left: 14px;
     }
 
-    .item {
-      margin-bottom: 16px;
+    section h2::before {
+      content: "";
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg,#2563eb,#06b6d4);
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 6px;
     }
 
-    .item h4 {
-      margin: 0;
-      font-size: 15px;
-      font-weight: 600;
-    }
+    .item { margin-bottom: 18px; }
 
-    .item span {
-      font-size: 12px;
-      color: #666;
-    }
+    .item h4 { margin: 0; font-size: 15px; }
+    .item span { font-size: 12px; color: #64748b; }
 
-    .item ul {
-      padding-left: 18px;
-      margin: 6px 0 0;
-    }
-
-    .item li {
-      font-size: 13px;
-      margin-bottom: 4px;
-    }
+    ul { padding-left: 18px; margin: 8px 0 0; }
 
     @media(max-width: 900px) {
-      .container { grid-template-columns: 1fr; }
-      aside { text-align: center; }
+      .content { grid-template-columns: 1fr; }
+      header { flex-direction: column; align-items: flex-start; }
+      .header-right { text-align: left; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; padding: 0; }
+      .print-btn { display: none; }
+      header { border-radius: 0; }
     }
   </style>
 </head>
 <body>
 
-<div class="container">
+<div class="page">
 
-  <aside>
-    <div class="avatar">RG</div>
-    <h1>Ryan Goh</h1>
-    <p class="role">Software QA Engineer</p>
+  <button class="print-btn" onclick="window.print()">🖨 Print Resume</button>
 
-    <div class="side-block">
-      <h3>Contact</h3>
-      <p>📧 ryan@email.com</p>
-      <p>📱 +60 xxxx xxxx</p>
-      <p>📍 Kuala Lumpur, MY</p>
+  <div class="resume">
+
+    <header>
+      <div class="header-left">
+        <h1>Ryan Goh</h1>
+        <p>Software QA Engineer · Automation Tester</p>
+      </div>
+      <div class="header-right">
+        Kuala Lumpur, Malaysia<br>
+        ryan@email.com<br>
+        +60 xxxx xxxx
+      </div>
+    </header>
+
+    <div class="content">
+
+      <aside>
+        <div class="block">
+          <h3>Skills</h3>
+          <span class="tag">Manual Testing</span>
+          <span class="tag">Automation</span>
+          <span class="tag">Selenium</span>
+          <span class="tag">Postman</span>
+          <span class="tag">JMeter</span>
+          <span class="tag">API Testing</span>
+          <span class="tag">MLM System</span>
+        </div>
+
+        <div class="block">
+          <h3>Languages</h3>
+          <p>Chinese – Native</p>
+          <p>English – Intermediate</p>
+          <p>Malay – Basic</p>
+        </div>
+
+        <div class="block">
+          <h3>Tools</h3>
+          <p>Selenium</p>
+          <p>Postman</p>
+          <p>JMeter</p>
+          <p>Lighthouse</p>
+          <p>Chrome DevTools</p>
+        </div>
+      </aside>
+
+      <main>
+        <section>
+          <h2>Profile</h2>
+          <p>QA Engineer with nearly 2 years of experience in software testing, specializing in MLM systems, API testing, automation, and complex bonus & wallet logic validation.</p>
+        </section>
+
+        <section>
+          <h2>Work Experience</h2>
+          <div class="item">
+            <h4>Software QA Engineer – MLM System</h4>
+            <span>2023 – Present</span>
+            <ul>
+              <li>Manual, regression, UAT and automation testing.</li>
+              <li>Developed Selenium automation scripts.</li>
+              <li>API testing using Postman and performance testing via JMeter.</li>
+              <li>Validated bonus, wallet, tax and withdrawal calculation logic.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Projects</h2>
+          <div class="item">
+            <h4>Multi-country MLM Bonus System</h4>
+            <ul>
+              <li>Designed complex tax & GST scenario testing.</li>
+              <li>Automated regression testing for critical flows.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <p>Diploma / Bachelor – IT / Computer Science</p>
+        </section>
+      </main>
+
     </div>
 
-    <div class="side-block">
-      <h3>Skills</h3>
-      <div class="tags">
-        <span>Manual Testing</span>
-        <span>Automation Testing</span>
-        <span>Selenium</span>
-        <span>Postman</span>
-        <span>JMeter</span>
-        <span>API Testing</span>
-        <span>MLM System</span>
-      </div>
-    </div>
+  </div>
 
-    <div class="side-block">
-      <h3>Languages</h3>
-      <p>Chinese – Native</p>
-      <p>English – Intermediate</p>
-      <p>Malay – Basic</p>
-    </div>
-  </aside>
-
-  <main>
-    <section>
-      <h2>Profile</h2>
-      <p>
-        QA Engineer with nearly 2 years of experience in software testing, specializing in web systems, MLM platforms, API testing, and automation. Strong logical thinking, detail-oriented, and proactive in identifying edge cases and system risks.
-      </p>
-    </section>
-
-    <section>
-      <h2>Work Experience</h2>
-      <div class="item">
-        <h4>Software QA Engineer – MLM System</h4>
-        <span>2023 – Present</span>
-        <ul>
-          <li>Performed functional, regression, UAT and API testing.</li>
-          <li>Designed and executed automation scripts using Selenium.</li>
-          <li>Used Postman & JMeter for API & performance testing.</li>
-          <li>Tested bonus calculation, wallet system, tax & withdrawal logic.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <div class="item">
-        <h4>MLM Bonus & Wallet System Testing</h4>
-        <ul>
-          <li>Validated multi-country bonus & tax calculation logic.</li>
-          <li>Designed test cases for GST / VAT scenarios.</li>
-          <li>Performed automation for core flows.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Tools</h2>
-      <p>Selenium · Postman · JMeter · Lighthouse · Chrome DevTools · MySQL</p>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <p>Diploma / Bachelor – IT / Computer Science</p>
-    </section>
-
-  </main>
 </div>
 
 </body>
