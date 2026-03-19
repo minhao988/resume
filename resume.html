@@ -1,193 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modern Resume - Ryan Goh</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ryan Goh - Resume</title>
 
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(135deg,#0f172a,#020617);
-      color: #0f172a;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    .page {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 30px;
-    }
+<style>
+* { box-sizing: border-box; }
 
-    .resume {
-      background: #fff;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 15px 50px rgba(0,0,0,.35);
-    }
-
-    header {
-    background: #fff;
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f3f4f6;
   color: #111827;
-  border-bottom: 1px solid #e5e7eb;
-      padding: 40px 36px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .header-left h1 {
-      margin: 0;
-      font-size: 30px;
-      letter-spacing: .3px;
-    }
-
-    .header-left p {
-      margin: 6px 0 0;
-      opacity: .95;
-      font-size: 14px;
-    }
-
-    .header-right {
-      text-align: right;
-      font-size: 13px;
-      opacity: .95;
-      line-height: 1.6;
-    }
-
-    .print-btn {
-      background: #fff;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-weight: 600;
-      color: #2563eb;
-      cursor: pointer;
-      transition: .25s;
-      box-shadow: 0 5px 15px rgba(0,0,0,.15);
-    }
-
-    .print-btn:hover { transform: translateY(-2px); }
-
-    .content {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-    }
-
-
-    aside {
-  background: #fff;
-      padding: 28px 26px;
-  border-right: 1px solid #e5e7eb;
 }
 
-    main {
-      padding: 30px 34px;
-    }
+.page {
+  max-width: 1000px;
+  margin: 40px auto;
+}
 
-    .block { margin-bottom: 26px; }
+.resume {
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
 
-    .block h3 {
-      margin: 0 0 10px;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #2563eb;
-    }
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 36px;
+  border-bottom: 1px solid #e5e7eb;
+}
 
-    .block p, .block li { font-size: 13px; margin: 6px 0; }
-
-    .tag {
-      display: inline-block;
-      background: #f1f5f9;
-      color: #334155;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 11px;
-      margin: 4px 6px 0 0;
-      font-weight: 500;
-    }
-    
-
-    section { margin-bottom: 28px; }
-
-    section h2 {
-    
-      margin-bottom: 14px;
-      position: relative;
-      padding-left: 14px;
-      font-size: 16px;
-      color: #111827;
-    }
-
-    section h2::before {
-      content: "";
-      width: 6px;
-      height: 100%;
-      background: linear-gradient(180deg,#2563eb,#06b6d4);
-      position: absolute;
-      left: 0;
-      top: 0;
-      border-radius: 6px;
-    }
-
-    .item { margin-bottom: 18px; }
-
-    .item h4 { 
-      margin: 0; 
-      font-size: 14px;
-      font-weight: 600; 
-    }
-    
-    .item span { font-size: 11px; color: #64748b; }
-
-    ul { padding-left: 18px; margin: 8px 0 0; }
-
-    @media(max-width: 900px) {
-      .content { grid-template-columns: 1fr; }
-      header { flex-direction: column; align-items: flex-start; }
-      .header-right { text-align: left; }
-    }
-
-  @media print {
-  body {
-    background: #fff;
-  }
-
-  .resume {
-    box-shadow: none;
-    border-radius: 0;
-  }
-
-  header {
-    background: #fff !important;
-    color: #000 !important;
-  }
-
-  .tag {
-    background: #eee;
-    color: #000;
-  }
-
-  .print-btn {
-    display: none;
-  }
-
-  .page {
-    margin: 0;
-    padding: 0;
-  }
+.header-left {
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-pic {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  overflow: hidden;
   margin-bottom: 8px;
-  border: none;
 }
 
 .profile-pic img {
@@ -195,162 +54,284 @@
   height: 100%;
   object-fit: cover;
 }
-    .header-left {
-  display: flex;
-  flex-direction: column;
+
+.header-left h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
 }
-  </style>
+
+.header-left p {
+  margin: 4px 0 0;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.header-right {
+  text-align: right;
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* LAYOUT */
+.content {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+/* SIDEBAR */
+aside {
+  padding: 24px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.block {
+  margin-bottom: 24px;
+}
+
+.block h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.block p {
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+/* TAG */
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 11px;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  margin: 4px 4px 0 0;
+}
+
+/* MAIN */
+main {
+  padding: 26px 30px;
+}
+
+section {
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+section h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.item {
+  margin-bottom: 16px;
+}
+
+.item h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.item span {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+ul {
+  padding-left: 16px;
+  margin: 6px 0 0;
+}
+
+li {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+/* PRINT BUTTON */
+.print-btn {
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media(max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right {
+    text-align: left;
+    margin-top: 10px;
+  }
+}
+
+/* PRINT */
+@media print {
+  body {
+    background: #fff;
+    font-size: 12px;
+  }
+
+  .page {
+    margin: 0;
+  }
+
+  .resume {
+    box-shadow: none;
+  }
+
+  .print-btn {
+    display: none;
+  }
+
+  section {
+    border-bottom: none;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <div class="page">
 
-  <button class="print-btn" onclick="window.print()">🖨 Print Resume</button>
+<button class="print-btn" onclick="window.print()">Print Resume</button>
 
-  <div class="resume">
+<div class="resume">
 
-  <header>
+<header>
   <div class="header-left">
-      <div class="profile-pic">
-    <img src="CV_Photo.jpg" alt="Ryan Goh">
-  </div>
+    <div class="profile-pic">
+      <img src="CV_Photo.jpg">
+    </div>
     <h1>Ryan Goh</h1>
     <p>Software QA Engineer</p>
   </div>
 
-
-
   <div class="header-right">
     Kuala Lumpur, Malaysia<br>
     minhao988@hotmail.com<br>
-    012-218-7900 (pref Whatsapp)
+    012-218-7900<br>
+    LinkedIn: linkedin.com/in/yourname
   </div>
 </header>
 
-    <div class="content">
+<div class="content">
 
-      <aside>
-        <div class="block">
-          <h3>Skills</h3>
-          <span class="tag">Manual Testing</span>
-          <span class="tag">Basic Automation</span>
-          <span class="tag">Basic Selenium</span>
-          <span class="tag">Postman</span>
-          <span class="tag">SQL</span>
-          <span class="tag">API Testing</span>
-          <span class="tag">MLM System</span>
-        </div>
+<aside>
 
-        <div class="block">
-          <h3>Languages</h3>
-          <p>Chinese – Native</p>
-          <p>English – Intermediate</p>
-          <p>Malay – Basic</p>
-        </div>
+<div class="block">
+  <h3>Skills</h3>
+  <span class="tag">Manual Testing</span>
+  <span class="tag">Selenium</span>
+  <span class="tag">Postman</span>
+  <span class="tag">SQL</span>
+  <span class="tag">API Testing</span>
+  <span class="tag">MLM System</span>
+</div>
 
-        <div class="block">
-          <h3>Tools</h3>
-          <p>Selenium</p>
-          <p>Postman</p>
-          <p>Lighthouse</p>
-          <p>Chrome DevTools</p>
-          <p>Visual Studio</p>
-          <p>SQL Server Management Studio</p>
-        </div>
+<div class="block">
+  <h3>Languages</h3>
+  <p>Chinese – Native</p>
+  <p>English – Intermediate</p>
+  <p>Malay – Basic</p>
+</div>
 
-         <div class="block">
-          <h3>Interest</h3>
-           <p>Listening Music</p>
-          <p>Reading and Measure</p>
-        </div>
-      </aside>
+<div class="block">
+  <h3>Tools</h3>
+  <p>Selenium</p>
+  <p>Postman</p>
+  <p>JMeter</p>
+  <p>Chrome DevTools</p>
+</div>
 
-      <main>
-        <section>
-          <h2>Profile</h2>
-          <p>
-            Software QA Engineer with nearly <b>3 years of experience</b> specializing in <b>MLM systems, business logic validation, 
-              API testing, and complex bonus & wallet calculation flows</b>. Strong analytical skills in identifying edge cases, system inconsistencies, and financial calculation risks. Experienced in end-to-end testing for 
-            <b>multi-country MLM platforms and eCommerce systems</b>, ensuring accuracy, stability, and regulatory compliance.
-          </p>
-          <p>Experienced in handling financial-critical systems involving multi-country tax, bonus, and wallet transactions.</p>
-        </section>
+<div class="block">
+  <h3>Interest</h3>
+  <p>Music</p>
+  <p>Reading</p>
+</div>
 
-        <section>
-          <h2>Work Experience</h2>
-            <div class="item">
-            <h4>NTT MSC SDN BHD intern as Network Engineer</h4>
-            <span>January 2020 -  March 2020</span>
-            <ul>
-              <li>Respective handle procuring network equipment.</li>
-              <li>Managing subcontractors involved network installation</li>
-              <li>schedule to replace and update network equipment</li>
-            </ul>
-          </div>
-          <div class="item">
-               <div class="item">
-            <h4>PHITOMAS SDN BHD intern as Software Engineer</h4>
-            <span>May 2022 -  November 2022</span>
-            <ul>
-              <li>Respective code, testing, debugging various software application to meets needs</li>
-              <li>presenting information through report and visualization</li>
-              <li>majority update the framework to the latest stable version</li>
-            </ul>
-          </div>
-          <div class="item">
-            <h4>I ASSIST SDN BHD work as Software QA Engineer</h4>
-            <span>May 2023 – Present</span>
-            <ul>
-              <li>Performed manual, regression, and UAT testing for MLM systems, ensuring business logic accuracy and system stability.</li>
-              <li>Developed Selenium scripts to generate large-scale test data for system validation.</li>
-              <li>API testing using Postman and performance testing via JMeter or Inspect.</li>
-              <li>Validated sales, bonus, wallet, tax and withdrawal calculation logic for MLM System.</li>
-              <li>Collaborated with clients to troubleshoot issues and clarify system behavior.</li>
-            </ul>
-          </div>
-        </section>
+</aside>
 
+<main>
 
-        <section>
-          <h2>Education</h2>
-           <div class="item">
-          <h4>Tunku Abdul Rahman University College K.L.</h4>
-          <span>2018-2023</span>
-          <ul>
-            <li>Award the Diploma in Computer Science Software Engineering in CGPA 3.4</li>
-            <li>Award the Degree in Computer Science Software System Development in CGPA 3.2977</li>
-          </ul>
-           </div>
-        </section>
+<section>
+  <h2>Profile</h2>
+  <p>
+    Software QA Engineer with nearly 3 years of experience specializing in MLM systems, API testing, and financial calculation validation. Strong in identifying edge cases and ensuring system accuracy across multi-country platforms.
+  </p>
+</section>
 
+<section>
+  <h2>Work Experience</h2>
 
-
-        <section>
-          <h2>Reference</h2>
-            <div class="item">
-              <p>Name: Dr Chaw Thim Vai</p>
-              <p>Relationship: Professor</p> 
-              <p>Position: Programme Leader</p>
-              <p>Company Name: TARUC</p>
-              <p>Company Address: Kampus Utama, Jalan Genting Kelang, 53300 Wilayah Persekutuan Kuala Lumpur</p>
-              <p>Tel. No: 03-41450123 ext 3602</p>
-              <p>Email: chawtv@tarc.edu.my</p>
-           </div>
-              <div class="item">
-              <p>Name: Teoh Yan Nee</p>
-              <p>Relationship: Supervisor</p> 
-              <p>Position: Director</p>
-              <p>Company Name: Phitomas Sdn. Bhd.</p>
-              <p>Company Address: Suite 301, Block A, Level 3, Pusat Dagangan, Phileo Damansara 1, 9, Jalan 16/11, Pusat Perdagangan Phileo Damansara, 46350 Petaling Jaya, Selangor</p>
-              <p>Email: ynteoh@phitomas.com</p>
-           </div>
-        </section>
-      </main>
-
-    </div>
-
+  <div class="item">
+    <h4>I Assist Sdn Bhd – Software QA Engineer</h4>
+    <span>May 2023 – Present</span>
+    <ul>
+      <li>Performed manual, regression, and UAT testing for MLM systems</li>
+      <li>Developed Selenium scripts for large-scale data testing</li>
+      <li>Validated bonus, wallet, tax and withdrawal logic</li>
+      <li>Conducted API testing using Postman</li>
+      <li>Worked closely with clients to resolve system issues</li>
+    </ul>
   </div>
 
+  <div class="item">
+    <h4>Phitomas Sdn Bhd – Software Engineer Intern</h4>
+    <span>May 2022 – Nov 2022</span>
+    <ul>
+      <li>Developed and tested software applications</li>
+      <li>Assisted in system upgrades and improvements</li>
+    </ul>
+  </div>
+
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="item">
+    <h4>TAR UC</h4>
+    <span>2018 – 2023</span>
+    <ul>
+      <li>Diploma in Software Engineering (CGPA 3.4)</li>
+      <li>Degree in Software System Development (CGPA 3.29)</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Reference</h2>
+  <p>Available upon request</p>
+</section>
+
+</main>
+
+</div>
+
+</div>
 </div>
 
 </body>
