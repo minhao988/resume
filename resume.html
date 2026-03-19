@@ -152,12 +152,35 @@
       .header-right { text-align: left; }
     }
 
-    @media print {
-      body { background: #fff; }
-      .page { margin: 0; padding: 0; }
-      .print-btn { display: none; }
-      header { border-radius: 0; }
-    }
+  @media print {
+  body {
+    background: #fff;
+  }
+
+  .resume {
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  header {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .tag {
+    background: #eee;
+    color: #000;
+  }
+
+  .print-btn {
+    display: none;
+  }
+
+  .page {
+    margin: 0;
+    padding: 0;
+  }
+}
 
 .profile-pic {
   width: 50px;
